@@ -4,6 +4,7 @@ import React, {Component} from 'react'
 import './App.css';
 import HatList from './Components/HatList'
 import hats from './hats'
+import Register from './Components/Register'
 
 class App extends Component {
   constructor(props){
@@ -26,7 +27,7 @@ class App extends Component {
             <HatList hat={this.state.hats}/>
           </div>
           <div className="register">
-
+            <Register />
           </div>
         </div>
       </div>

@@ -1,3 +1,10 @@
+/* .App {
+  position:relative;
+  /* display: flex;
+  flex-direction: column;
+  text-align: center; */
+/* } */ 
+
 .App-header {
   background-color: grey;
   width: 100%;
@@ -19,30 +26,31 @@
 
 .hats{
   position: relative;
+  align-items: center;
+  /* display: inline-block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  margin: 10px;
+  padding: 20px; */
+  
 }
 
 .hat-list {
     float: left;
     width: 70%;
     height: 100%;
-    /* display: inline;
+    /* display: inline-block;
     flex-direction: row;
     flex-wrap: wrap; */
     background-color: darkkhaki;
 }
 
-.register{
-  width: 29.8%;
-  float: right;
-  height: 100%;
-  background-color: lightgrey;
-  text-align: center;
-  
-}
-
 img {
-  width: 150px;
-  height: 200px;
+  /* position: relative; */
+  /* display: inline-block; */
+  width: 200px;
+  height:200px;
   background-color: white;
 }
 
@@ -55,9 +63,27 @@ img {
 .individual-hat{
   width: 150px;
   position: relative;
-  display: inline-block;
-  flex-direction: column;
+  display: inline-flex;
+  flex-direction: row;
   flex-wrap: wrap;
   word-wrap: normal;
-  padding: 10px;
+  /* padding: 10px; */
+  margin: 50px;
+}
+
+.register{
+  width: 29.8%;
+  float: right;
+  height: 100%;
+  background-color: lightgrey;
+  text-align: center;
+  
+}
+
+.register-items{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
 }

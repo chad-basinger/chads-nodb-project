@@ -13,13 +13,14 @@ class HatList extends Component{
             
             <div className='hats'>
                 { this.props.hat.map((element, index) => {
+                    return (
                     <div className='individual-hat' key={index}>
                         <img src={element.img} alt={element.name}/>
                          {/* onClick={() => this.props.addToShelf(index)} */}
 
-                        <p className='hat-title-text'>{element.name}</p>
+                        <span className='hat-title-text'>{element.name}</span>
                     </div>
-                    }) 
+                )}) 
                 }
             </div>
         )
