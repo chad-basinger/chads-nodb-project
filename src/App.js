@@ -15,7 +15,9 @@ function App() {
           <div className="hat-list">
             <HatList />
           </div>
+          <div className="register">
 
+          </div>
         </div>
       </div>
     );
