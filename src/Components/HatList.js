@@ -19,6 +19,7 @@ class HatList extends Component{
                          {/* onClick={() => this.props.addToShelf(index)} */}
 
                         <span className='hat-title-text'>{element.name}</span>
+                        <span className='hat-price'>{element.price}</span>
                     </div>
                 )}) 
                 }

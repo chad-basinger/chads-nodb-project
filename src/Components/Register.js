@@ -1,4 +1,8 @@
 import React, {Component} from 'react'
+import RegisterUser from './RegisterUser'
+import UpdateUserName from './UpdateUserName'
+import UpdateUserEmail from './UpdateUserEmail'
+import UnregisterUser from './UnregisterUser'
 const { default: axios } = require("axios")
 const usersBaseURL = '/api/users'
 
@@ -9,7 +13,9 @@ class Register extends Component {
         this.state = {
             users: [],
             userEmail: '',
-            userName: ''
+            userName: '',
+            newName: '',
+            newEmail: ''
         }
         
     }
@@ -21,7 +27,8 @@ class Register extends Component {
             })
     }
 
-    updateEmail = () => {
+    updateEmail = (id, newEmail) => {
+        axios.put(`${usersBaseURL}/${id}`)
 
     }
 
@@ -44,12 +51,18 @@ class Register extends Component {
     render(){
         return (
             <div className='register-items'>
-                <h1>Number of Registered Users being alerted: {129 + this.state.users.length}</h1>
+                <h2 className="registered-users-num">Registered Users being alerted: {129 + this.state.users.length}</h2>
                 <div>
-
+                    <RegisterUser />
                 </div>
                 <div>
-
+                    <UpdateUserName />
+                </div>
+                <div>
+                    <UpdateUserEmail />
+                </div>
+                <div>
+                    <UnregisterUser />
                 </div>
 
             </div>
