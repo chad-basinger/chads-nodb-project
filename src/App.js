@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import axios from 'axios';
+import Header from './Components/Header'
+import React, {Component} from 'react'
 import './App.css';
+import HatList from './Components/HatList'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+      <div className="App">
+        <div className="App-header">
+          <Header />
+        </div>
+        <div className="main-section">
+          <div className="hat-list">
+            <HatList />
+          </div>
+
+        </div>
+      </div>
+    );
 }
 
 export default App;
