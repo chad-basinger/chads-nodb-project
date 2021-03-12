@@ -18,6 +18,7 @@ class Register extends Component {
             newEmail: ''
         }
         
+
     }
 
     componentDidMount(){
@@ -37,13 +38,29 @@ class Register extends Component {
     }
 
     createUser = () => {
+        let {newEmail} = this.state.newEmail;
+        let {newName} = this.state.newName;
+        axios.post(`${usersBaseURL}`, {newEmail, newName})
+        .then( response => {
+            this.setState({users: response.data})
+        })
 
+        this.setState({newEmail: ''})
+        this.setState({newName: ''})
     }
 
     deleteUser = (email) => {
         const {userIndex} = this.state.users.findIndex(element => element.email === this.userEmail)
         const {deleteID} = this.state.users[userIndex].id
         axios.delete(`${usersBaseURL}/${deleteID}`)
+    }
+
+    handleNewEmailInput = (val) => {
+        this.setState({newEmail: val})
+    }
+
+    handleNewNameInput = (val) => {
+        this.setState({newName: val})
     }
 
 
@@ -53,15 +70,15 @@ class Register extends Component {
             <div className='register-items'>
                 <h2 className="registered-users-num">Registered Users being alerted: {129 + this.state.users.length}</h2>
                 <div>
-                    <RegisterUser />
+                    <RegisterUser handleNewNameInput={this.handleNewNameInput} handleNewEmailInput={this.handleNewEmailInput} createUser={this.createUser}/>
                 </div>
-                <div>
+                <div className="updateExistingName">
                     <UpdateUserName />
                 </div>
-                <div>
+                <div className="updateExistingEmail">
                     <UpdateUserEmail />
                 </div>
-                <div>
+                <div className="unregister">
                     <UnregisterUser />
                 </div>
 

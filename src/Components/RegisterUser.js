@@ -4,6 +4,8 @@ class RegisterUser extends Component {
     constructor(props){
         super(props)
     }
+
+
     render() {
         return (
             <div>
@@ -12,14 +14,15 @@ class RegisterUser extends Component {
                     <p>Name:</p>
                     <input 
                             value={this.props.userName}
-                            onChange={e => this.handleInput(e.target.value)}/>
+                            onChange={e => this.props.handleNewNameInput(e.target.value)}/>
                 </div>
                 <div className="register-email-input">
                     <p>Email:</p>
                     <input 
                             value={this.props.userEmail}
-                            onChange={e => this.handleInput(e.target.value)}/>
+                            onChange={e => this.props.handleNewEmailInput(e.target.value)}/>
                 </div>
+                <button onClick={() => this.props.createUser()}>Submit</button>
             </div>
         )
     }
