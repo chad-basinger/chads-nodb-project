@@ -40,6 +40,7 @@
     float: left;
     width: 70%;
     height: 100%;
+    overflow: auto;
     /* display: inline-block;
     flex-direction: row;
     flex-wrap: wrap; */
@@ -73,10 +74,15 @@ img {
 
 .register{
   width: 29.8%;
+  height: fill;
   float: right;
-  height: 100%;
   background-color: lightgrey;
   text-align: center;
+  overflow: auto;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  word-wrap: normal; */
   /* display: flex;
   justify-content: space-around;
   flex-direction: column; */
@@ -101,6 +107,51 @@ img {
   
 }
 
+.unregister-input{
+  position: relative; 
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.update-new-name-input{
+  position: relative; 
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.existing-name-email-input{
+  position: relative; 
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.existing-name-new-email-input{
+  position: relative; 
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.existing-name-name-input{
+  position: relative; 
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
 .register-email-input{
   position: relative; 
   display:flex;
@@ -119,6 +170,10 @@ input {
   color: red;
 }
 
+.registered-users-header{
+  position: fixed;
+}
+
 .updateExistingName{
   margin-top: 100px;
 }
@@ -129,4 +184,5 @@ input {
 
 .unregister{
   margin-top: 100px;
+  margin-bottom: 50px;
 }

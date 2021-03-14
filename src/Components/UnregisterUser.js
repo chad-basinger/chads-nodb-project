@@ -24,7 +24,7 @@ class UnregisterUser extends Component {
                 ? (
                     <div>
                         <h2>Stop alerts to this email</h2>
-                        <div className="existing-name-email-input">
+                        <div className="unregister-input">
                             <p>email:</p>
                             <input 
                                     value={this.props.userEmail}

@@ -25,13 +25,13 @@ class UpdateUserEmail extends Component {
                 ? (
                     <div>
                         <h2>Update Existing Email</h2>
-                        <div className="existing-name-email-input">
+                        <div className="existing-name-name-input">
                             <p>Existing Name:</p>
                             <input 
                                     value={this.props.userName}
                                     onChange={e => this.props.handleNewEmailInput(e.target.value)}/>
                         </div>
-                        <div className="existing-name-current-name-input">
+                        <div className="existing-name-new-email-input">
                             <p>New Email:</p>
                             <input 
                                     value={this.props.newEmail}

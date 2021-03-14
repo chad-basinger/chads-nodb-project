@@ -25,7 +25,7 @@ class UpdateUserName extends Component {
                 ? (
                     <div>
                         <h2>Update Existing Name</h2>
-                    <div className="existing-name-current-name-input">
+                    <div className="update-new-name-input">
                         <p>New Name:</p>
                         <input 
                                 value={this.props.newName}
