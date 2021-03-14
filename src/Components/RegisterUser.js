@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 
 class RegisterUser extends Component {
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
     }
 
 

@@ -43,7 +43,7 @@ module.exports = {
 
     delete: (req, res) => {
         let userIndex2 = null;
-        const {name, email} = req.body;
+        const {email} = req.body;
 
         users.forEach((elem, i) => {
             if(elem.email === email){
