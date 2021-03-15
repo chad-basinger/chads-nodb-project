@@ -4,13 +4,18 @@ let id = 0;
 
 module.exports = {
     create: (req, res) => {
-        users.push({
-            id: id,
-            name: req.body.name,
-            email: req.body.email
-        })
-        id++
-        res.status(200).send(users)
+        if(req.body.name != "" && req.body.email != ""){
+
+            users.push({
+                id: id,
+                name: req.body.name,
+                email: req.body.email
+            })
+            id++
+            res.status(200).send(users)
+        }else {
+            res.status(400).send(console.error(error))
+        }
     },
 
     read: (req, res) => {
@@ -21,25 +26,34 @@ module.exports = {
         const {name, email} = req.body
         let userIndex = null;
         // console.log(name, email)
+        if(users.length > 0){
 
-        users.forEach((elem, i) => {
-            //match the name, if no name matches, match the email.
-            if(elem.name === name){
-                userIndex = i;
-                id = users[userIndex].id
-            } else if(elem.email === email){
-                userIndex = i;
-                id = users[userIndex].id
+            users.forEach((elem, i) => {
+                //match the name, if no name matches, match the email.
+                if(elem.name === name){
+                    userIndex = i;
+                    id = users[userIndex].id
+                } else if(elem.email === email){
+                    userIndex = i;
+                    id = users[userIndex].id
+                } else {
+                    res.status(404).send(console.error(error))
+                    // throw new Error('No Match Found!')
+                }
+            })
+            const updatedUser = {
+                id,
+                name,
+                email
             }
-        })
-        const updatedUser = {
-            id,
-            name,
-            email
+    
+            users.splice(userIndex, 1, updatedUser)
+            res.status(200).send(users)
+        }else {
+            res.status(404).send(console.error(error))
+            // throw new Error('Boom!')
         }
 
-        users.splice(userIndex, 1, updatedUser)
-        res.status(200).send(users)
     },
 
     delete: (req, res) => {

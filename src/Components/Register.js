@@ -30,27 +30,39 @@ class Register extends Component {
                 console.log(response.data)
             })
             .catch(err => console.log(err));
+
     }
 
+    //update an existing user's email using their name
     updateEmail = () => {
         axios.put(`${usersBaseURL}`, {name: `${this.state.userName}`, email: `${this.state.newEmail}`})
         .then(response => {
             this.setState({users: response.data})
             console.log(this.state.users)
+            this.showToast()
+            this.handleClearUpdateEmail()
         })
         .catch(error => console.log(error))
-
+        
+        
     }
 
+    //update an existing user's name using their email
     updateName = () => {
         axios.put(`${usersBaseURL}`, {name: `${this.state.newName}`, email: `${this.state.userEmail}`})
         .then(response => {
             this.setState({users: response.data})
             console.log(this.state.users)
+            this.showToast()
+            this.handleClearUpdateName()
         })
         .catch(error => console.log(error))
+
+        
+        
     }
 
+    //register new user for sales alerts
     createUser = () => {
         // const {userName} = this.state.userName;
         // const {userEmail} = this.state.userEmail;
@@ -62,26 +74,46 @@ class Register extends Component {
         .then( response => {
             this.setState({users: response.data})
             console.log(this.state.users)
+            this.handleClearRegister()
+            this.showToast()
         })
         .catch(err => console.log(err));
 
-        this.setState({userName: ''})
-        this.setState({userEmail: ''})
+        
+
+        
     }
 
+    //unregister a user
     deleteUser = () => {
-        // console.log(this.state.users)
-        // const {userIndex} = this.state.users.findIndex(element => element.email === this.userEmail)
-
-        // console.log(userIndex)
-        // const {deleteID} = this.state.users[userIndex].id
-        // console.log(this.state.users)
         axios.delete(`${usersBaseURL}`, {data: {email: `${this.state.userEmail}`}})
         .then( response => {
             console.log(response.data)
         })
         .catch(err => console.log(err))
         // console.log(this.state.users)
+        this.handleClearUnregister()
+        this.showToast()
+        this.componentDidMount()
+    }
+
+    handleClearRegister = () => {
+        document.getElementById("userEmail").value = "";
+        document.getElementById("userName").value = "";   
+    }
+
+    handleClearUpdateName = () => {
+        document.getElementById("existingEmail").value = "";
+        document.getElementById("newName").value = "";   
+    }
+
+    handleClearUpdateEmail = () => {
+        document.getElementById("newEmail").value = "";
+        document.getElementById("existingName").value = "";   
+    }
+
+    handleClearUnregister = () => {
+        document.getElementById("unregisterEmail").value = "";  
     }
 
     handleNewEmailInput = (val) => {
@@ -116,6 +148,17 @@ class Register extends Component {
         // console.log(this.state.userEmail)
     }
 
+    showToast() {
+        // Get the snackbar DIV
+        var x = document.getElementById("success");
+      
+        // Add the "show" class to DIV
+        x.className = "show";
+      
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+
 
 
     render(){
@@ -136,6 +179,7 @@ class Register extends Component {
                 <div className="unregister">
                     <UnregisterUser handleUnregister={this.handleUnregister} deleteUser={this.deleteUser}/>
                 </div>
+                <div id="success">Success!</div>
 
             </div>
             

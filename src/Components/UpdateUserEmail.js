@@ -28,12 +28,14 @@ class UpdateUserEmail extends Component {
                         <div className="existing-name-name-input">
                             <p>Existing Name:</p>
                             <input 
+                                    id="existingName"
                                     value={this.props.userName}
                                     onChange={e => this.props.handleExistingNameInput(e.target.value)}/>
                         </div>
                         <div className="existing-name-new-email-input">
                             <p>New Email:</p>
                             <input 
+                                    id="newEmail"
                                     value={this.props.newEmail}
                                     onChange={e => this.props.handleUpdateEmailInput(e.target.value)}/>
                         </div>

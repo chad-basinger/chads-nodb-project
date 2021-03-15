@@ -9,7 +9,9 @@
   background-color: grey;
   width: 100%;
   height: 10vh;
-  color: rgb(29, 211, 211);
+  font-family: fantasy;
+  font-size: x-large;
+  color: rgb(93, 206, 206);
   position: relative;
   display: flex;
   justify-content: center;
@@ -53,12 +55,21 @@ img {
   width: 200px;
   height:200px;
   background-color: white;
+
 }
 
 .hat-title-text{
   display: flex;
   flex-wrap: wrap;
   word-wrap: break-word;
+  justify-content: center;
+}
+
+.hat-price {
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  justify-content: center;
 }
 
 .individual-hat{
@@ -76,7 +87,8 @@ img {
   width: 29.8%;
   height: fill;
   float: right;
-  background-color: lightgrey;
+  font-family: monospace;
+  background-color: rgba(231, 228, 188, 0.76);
   text-align: center;
   overflow: auto;
   /* display: flex;
@@ -132,6 +144,7 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 0px;
+  padding-right: 50px;
 }
 
 .existing-name-new-email-input{
@@ -141,6 +154,7 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 0px;
+  
 }
 
 .existing-name-name-input{
@@ -150,6 +164,7 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 0px;
+  padding-right: 33px;
 }
 
 .register-email-input{
@@ -161,6 +176,10 @@ img {
   margin-top: 0px;
 }
 
+button{
+  font-family: monospace;
+}
+
 input {
   width: 150px;
   margin-left: 10px;
@@ -168,6 +187,7 @@ input {
 
 .registered-users-num{
   color: red;
+  font-family: monospace;
 }
 
 .registered-users-header{
@@ -185,4 +205,49 @@ input {
 .unregister{
   margin-top: 100px;
   margin-bottom: 50px;
+}
+
+#success {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#success.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 1.0s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 50px; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 50px; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }

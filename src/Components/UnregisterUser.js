@@ -27,6 +27,7 @@ class UnregisterUser extends Component {
                         <div className="unregister-input">
                             <p>email:</p>
                             <input 
+                                    id="unregisterEmail"
                                     value={this.props.userEmail}
                                     onChange={e => this.props.handleUnregister(e.target.value)}/>
                         </div>
