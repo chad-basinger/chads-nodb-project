@@ -165,7 +165,7 @@ class Register extends Component {
         return (
             <div className='register-items'>
                 
-                    <h2 className="registered-users-num">Registered Users being alerted: {129 + this.state.users.length}</h2>
+                    <h2 className="registered-users-num">Users on sales watch: {129 + this.state.users.length}</h2>
                 
                 <div>
                     <RegisterUser handleNewNameInput={this.handleNewNameInput} handleNewEmailInput={this.handleNewEmailInput} createUser={this.createUser}/>

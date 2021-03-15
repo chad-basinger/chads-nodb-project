@@ -1,0 +1,281 @@
+/* .App {
+  position:relative;
+  /* display: flex;
+  flex-direction: column;
+  text-align: center; */
+/* } */ 
+
+.App-header {
+    background-color: rgb(10, 85, 104);
+    width: 100%;
+    height: 10vh;
+    font-family: fantasy;
+    font-size: x-large;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-section{
+    position:relative;
+    width: 100%;
+    height: 90vh;
+    background:  rgb(10, 85, 104);
+    
+    /* border-right: 1px solid black; */
+  }
+  
+  .hats{
+    position: relative;
+    align-items: center;
+    /* display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    margin: 10px;
+    padding: 20px; */
+    
+  }
+  
+  .hat-list {
+      float: left;
+      width: 70%;
+      height: 100%;
+      overflow: auto;
+      /* display: inline-block;
+      flex-direction: row;
+      flex-wrap: wrap; */
+      background-color: white;
+      background-image: url("https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHw%3D&w=1000&q=80");
+      background-repeat: no-repeat;
+      background-size:cover;
+  }
+  
+  img {
+    /* position: relative; */
+    /* display: inline-block; */
+    width: 200px;
+    height:200px;
+    background-color: white;
+    border-radius: 10% / 50%;
+    
+  
+  }
+
+.individual-hat:hover {
+    transform: scale(1.5);
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+  
+  .hat-title-text{
+    display: flex;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    justify-content: center;
+    color: white;
+    font-size: large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .hat-price {
+    display: flex;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    justify-content: center;
+    color: white;
+    font-size: x-large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .individual-hat{
+    width: 200px;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    word-wrap: normal;
+    /* padding: 10px; */
+    margin: 60px;
+  }
+  
+  .register{
+    width: 29.8%;
+    height: fill;
+    float: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(33, 154, 170, 0.966);
+    text-align: center;
+    overflow: auto;
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    word-wrap: normal; */
+    /* display: flex;
+    justify-content: space-around;
+    flex-direction: column; */
+    
+  }
+  
+  .register-items{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .register-name-input{
+    position: relative; 
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+    
+    
+  }
+  
+  .unregister-input{
+    position: relative; 
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+  }
+  
+  .update-new-name-input{
+    position: relative; 
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+    padding-right: 20px;
+  }
+  
+  .existing-name-email-input{
+    position: relative; 
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+    padding-right: 50px;
+  }
+  
+  .existing-name-new-email-input{
+    position: relative; 
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+    
+  }
+  
+  .existing-name-name-input{
+    position: relative; 
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+    padding-right: 33px;
+  }
+  
+  .register-email-input{
+    position: relative; 
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+  }
+  
+  button{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+  }
+  
+  button:hover {
+    color: rgb(10, 10, 238);
+  }
+  
+  input {
+    width: 150px;
+    margin-left: 10px;
+  }
+  
+  .registered-users-num{
+    color: rgb(17, 27, 116);
+    font-family: monospace;
+    font-size: xx-large;
+  }
+  
+  .registered-users-header{
+    position: fixed;
+  }
+  
+  .updateExistingName{
+    margin-top: 100px;
+  }
+  
+  .updateExistingEmail{
+    margin-top: 100px;
+  }
+  
+  .unregister{
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  
+  #success {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #success.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 1.0s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 50px; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 50px; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Header from './Components/Header'
 import React, {Component} from 'react'
-import './App.css';
+import './App2.css';
 import HatList from './Components/HatList'
 import hats from './hats'
 import Register from './Components/Register'
@@ -22,14 +22,14 @@ class App extends Component {
         <div className="App-header">
           <Header />
         </div>
-        <div className="main-section">
+        <section className="main-section">
           <div className="hat-list">
             <HatList hat={this.state.hats}/>
           </div>
-          <div className="register">
+          <aside className="register">
             <Register />
-          </div>
-        </div>
+          </aside>
+        </section>
       </div>
     );
   }

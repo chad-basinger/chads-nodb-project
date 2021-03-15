@@ -15,8 +15,8 @@ class HatList extends Component{
                 { this.props.hat.map((element, index) => {
                     return (
                     <div className='individual-hat' key={index}>
-                        <img src={element.img} alt={element.name}/>
-                         {/* onClick={() => this.props.addToShelf(index)} */}
+                        <img src={element.img} alt={element.name}
+                         onClick={() => window.open(element.url)}/>
 
                         <span className='hat-title-text'>{element.name}</span>
                         <span className='hat-price'>{element.price}</span>
