@@ -20,6 +20,7 @@ module.exports = {
     update: (req, res) => {
         const {name, email} = req.body
         let userIndex = null;
+        // console.log(name, email)
 
         users.forEach((elem, i) => {
             //match the name, if no name matches, match the email.

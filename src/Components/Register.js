@@ -32,13 +32,23 @@ class Register extends Component {
             .catch(err => console.log(err));
     }
 
-    updateEmail = (id, newEmail) => {
-        axios.put(`${usersBaseURL}/${id}`)
+    updateEmail = () => {
+        axios.put(`${usersBaseURL}`, {name: `${this.state.userName}`, email: `${this.state.newEmail}`})
+        .then(response => {
+            this.setState({users: response.data})
+            console.log(this.state.users)
+        })
+        .catch(error => console.log(error))
 
     }
 
     updateName = () => {
-
+        axios.put(`${usersBaseURL}`, {name: `${this.state.newName}`, email: `${this.state.userEmail}`})
+        .then(response => {
+            this.setState({users: response.data})
+            console.log(this.state.users)
+        })
+        .catch(error => console.log(error))
     }
 
     createUser = () => {
@@ -51,7 +61,7 @@ class Register extends Component {
         axios.post(`${usersBaseURL}`, {name: `${this.state.userName}`, email: `${this.state.userEmail}`})
         .then( response => {
             this.setState({users: response.data})
-            // console.log(this.state.users)
+            console.log(this.state.users)
         })
         .catch(err => console.log(err));
 
@@ -65,9 +75,13 @@ class Register extends Component {
 
         // console.log(userIndex)
         // const {deleteID} = this.state.users[userIndex].id
-        console.log(this.state.users)
-        axios.delete(`${usersBaseURL}`, `${this.state.userEmail}`)
-        console.log(this.state.users)
+        // console.log(this.state.users)
+        axios.delete(`${usersBaseURL}`, {data: {email: `${this.state.userEmail}`}})
+        .then( response => {
+            console.log(response.data)
+        })
+        .catch(err => console.log(err))
+        // console.log(this.state.users)
     }
 
     handleNewEmailInput = (val) => {
@@ -79,6 +93,23 @@ class Register extends Component {
         this.setState({userName: val})
         // console.log(this.state.userName)
     }
+
+    handleUpdateNameInput = (val) => {
+        this.setState({newName: val})
+    }
+
+    handleExistingEmailInput = (val) => {
+        this.setState({userEmail: val})
+    }
+
+    handleExistingNameInput = (val) => {
+        this.setState({userName: val})
+    }
+
+    handleUpdateEmailInput = (val) => {
+        this.setState({newEmail: val})
+    }
+
 
     handleUnregister = (val) => {
         this.setState({userEmail: val})
@@ -97,10 +128,10 @@ class Register extends Component {
                     <RegisterUser handleNewNameInput={this.handleNewNameInput} handleNewEmailInput={this.handleNewEmailInput} createUser={this.createUser}/>
                 </div>
                 <div className="updateExistingName">
-                    <UpdateUserName />
+                    <UpdateUserName handleUpdateNameInput={this.handleUpdateNameInput} handleExistingEmailInput={this.handleExistingEmailInput} updateName={this.updateName}/>
                 </div>
                 <div className="updateExistingEmail">
-                    <UpdateUserEmail />
+                    <UpdateUserEmail handleExistingNameInput={this.handleExistingNameInput} handleUpdateEmailInput={this.handleUpdateEmailInput} updateEmail={this.updateEmail}/>
                 </div>
                 <div className="unregister">
                     <UnregisterUser handleUnregister={this.handleUnregister} deleteUser={this.deleteUser}/>

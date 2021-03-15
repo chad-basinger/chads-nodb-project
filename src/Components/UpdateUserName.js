@@ -29,15 +29,15 @@ class UpdateUserName extends Component {
                         <p>New Name:</p>
                         <input 
                                 value={this.props.newName}
-                                onChange={e => this.props.handleNewNameInput(e.target.value)}/>
+                                onChange={e => this.props.handleUpdateNameInput(e.target.value)}/>
                     </div>
                     <div className="existing-name-email-input">
                         <p>Existing Email:</p>
                         <input 
-                                value={this.props.newEmail}
-                                onChange={e => this.props.handleNewEmailInput(e.target.value)}/>
+                                value={this.props.userEmail}
+                                onChange={e => this.props.handleExistingEmailInput(e.target.value)}/>
                     </div>
-                    <button onClick={() => this.props.createUser()}>Submit</button>
+                    <button onClick={() => this.props.updateName()}>Submit</button>
                     </div>
                 )
                 : (
